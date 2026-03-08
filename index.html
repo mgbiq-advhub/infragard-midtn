@@ -132,6 +132,10 @@
     .footer-text a { color: rgba(255,255,255,0.4); text-decoration: none; }
     .footer-text a:hover { color: var(--gold); }
 
+    @media (max-width: 560px) {
+      .nav-wordmark { display: none; }
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .about-grid, .membership-grid, .support-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -330,7 +334,7 @@
     <p style="font-size:1.05rem; font-weight:300; line-height:1.8; color:rgba(255,255,255,0.75); margin-bottom:2rem;">Questions about membership, events, or partnership opportunities? Reach out and a board member will follow up with you directly.</p>
     <div class="contact-detail">
       <span class="contact-detail-label">Email</span>
-      <span class="contact-detail-value"><a href="mailto:info@infragardmidtn.org">info@infragardmidtn.org</a></span>
+      <span class="contact-detail-value"><a href="/cdn-cgi/l/email-protection#325b5c545d725b5c544053555340565f5b56465c1c5d4055"><span class="__cf_email__" data-cfemail="472e292128072e29213526202635232a2e23332969283520">[email&#160;protected]</span></a></span>
     </div>
     <div class="contact-detail">
       <span class="contact-detail-label">Web</span>
@@ -349,12 +353,12 @@
     <img class="footer-logo" src="IG_Middle%20Tennessee%20Members%20Alliance.png" alt="InfraGard Middle Tennessee" />
     <div class="footer-text">
       &copy; 2026 InfraGard Middle Tennessee Members Alliance &bull; A Public-Private Partnership with the FBI<br/>
-      <a href="https://www.infragardmidtn.org" target="_blank">infragardmidtn.org</a> &bull; <a href="mailto:info@infragardmidtn.org">info@infragardmidtn.org</a>
+      <a href="https://www.infragardmidtn.org" target="_blank">infragardmidtn.org</a> &bull; <a href="/cdn-cgi/l/email-protection#7e171018113e1710180c1f191f0c1a13171a0a1050110c19"><span class="__cf_email__" data-cfemail="f990979f96b990979f8b989e988b9d94909d8d97d7968b9e">[email&#160;protected]</span></a>
     </div>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Hamburger menu
   var btn = document.getElementById("hamburger");
   var menu = document.getElementById("navLinks");
@@ -371,18 +375,4 @@
 
   // Scroll spy
   var sections = document.querySelectorAll("section[id]");
-  var links = document.querySelectorAll(".nav-links a");
-  window.addEventListener("scroll", function() {
-    var current = "";
-    sections.forEach(function(s) {
-      if (window.scrollY >= s.offsetTop - 100) current = s.id;
-    });
-    links.forEach(function(a) {
-      a.style.color = a.getAttribute("href") === "#" + current
-        ? "var(--gold)" : "rgba(255,255,255,0.7)";
-    });
-  });
-</script>
-
-</body>
-</html>
+  var links = document.que
