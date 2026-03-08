@@ -355,8 +355,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Hamburger menu
+<script>
   var btn = document.getElementById("hamburger");
   var menu = document.getElementById("navLinks");
   btn.onclick = function() {
@@ -369,7 +368,19 @@
       menu.classList.remove("open");
     };
   });
-
-  // Scroll spy
   var sections = document.querySelectorAll("section[id]");
-  var links = document.que
+  var links = document.querySelectorAll(".nav-links a");
+  window.addEventListener("scroll", function() {
+    var current = "";
+    sections.forEach(function(s) {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    links.forEach(function(a) {
+      a.style.color = a.getAttribute("href") === "#" + current
+        ? "var(--gold)" : "rgba(255,255,255,0.7)";
+    });
+  });
+</script>
+
+</body>
+</html>
