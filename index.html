@@ -132,10 +132,6 @@
     .footer-text a { color: rgba(255,255,255,0.4); text-decoration: none; }
     .footer-text a:hover { color: var(--gold); }
 
-    @media (max-width: 560px) {
-      .nav-wordmark { display: none; }
-    }
-
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .about-grid, .membership-grid, .support-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -144,6 +140,7 @@
       nav { padding: 0 1.25rem; }
     }
     @media (max-width: 560px) {
+      .nav-wordmark { display: none; }
       .hamburger { display: flex; }
       .nav-links {
         display: flex; flex-direction: column;
