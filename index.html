@@ -16,721 +16,144 @@
       --text: #1a1a2e;
       --muted: #5a6478;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Source Serif 4', Georgia, serif;
-      background: var(--navy);
-      color: var(--white);
-      overflow-x: hidden;
-    }
+    body { font-family: 'Source Serif 4', Georgia, serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
 
     /* NAV */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(10, 22, 40, 0.97);
       border-bottom: 1px solid rgba(184, 151, 58, 0.25);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 2.5rem;
-      height: 64px;
-      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem; min-height: 64px;
+      backdrop-filter: blur(8px); overflow: visible;
     }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .nav-logo img {
-      height: 44px;
-      width: auto;
-    }
-
-    .nav-wordmark {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.12em;
-      color: var(--white);
-      line-height: 1.2;
-    }
-
-    .nav-wordmark span {
-      display: block;
-      font-size: 0.7rem;
-      color: var(--gold);
-      letter-spacing: 0.18em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-logo img { height: 44px; width: auto; }
+    .nav-wordmark { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.12em; color: var(--white); line-height: 1.2; }
+    .nav-wordmark span { display: block; font-size: 0.7rem; color: var(--gold); letter-spacing: 0.18em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
 
-    /* HERO */
-    #home {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      padding-top: 64px;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(26,58,110,0.55) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 80% 20%, rgba(200,16,46,0.08) 0%, transparent 60%),
-        linear-gradient(175deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%);
-    }
-
-    .hero-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(184,151,58,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(184,151,58,0.05) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 70% 70% at center, black 20%, transparent 80%);
-    }
-
-    .hero-content {
-      position: relative;
-      text-align: center;
-      max-width: 860px;
-      padding: 2rem;
-      animation: fadeUp 0.9s ease both;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-logo {
-      width: 180px;
-      height: auto;
-      margin: 0 auto 2rem;
-      filter: drop-shadow(0 4px 24px rgba(26,58,110,0.6));
-      animation: fadeUp 0.9s 0.1s ease both;
-    }
-
-    .hero-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.25rem;
-      animation: fadeUp 0.9s 0.2s ease both;
-    }
-
-    .hero-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      letter-spacing: 0.06em;
-      line-height: 1.0;
-      color: var(--white);
-      margin-bottom: 1.5rem;
-      animation: fadeUp 0.9s 0.3s ease both;
-    }
-
-    .hero-title em {
-      font-style: normal;
-      color: var(--gold);
-    }
-
-    .hero-mission {
-      font-size: 1.15rem;
-      font-weight: 300;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.82);
-      max-width: 680px;
-      margin: 0 auto 2.5rem;
-      animation: fadeUp 0.9s 0.4s ease both;
-    }
-
-    .hero-cta {
-      display: inline-block;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--white);
-      background: var(--accent);
-      padding: 0.85rem 2.2rem;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
-      animation: fadeUp 0.9s 0.5s ease both;
-    }
-
-    .hero-cta:hover { background: #a00d25; transform: translateY(-2px); }
-
-    /* SECTIONS */
-    section {
-      padding: 6rem 2rem;
-    }
-
-    .section-inner {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.75rem;
-    }
-
-    .section-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-      letter-spacing: 0.05em;
-      color: var(--white);
-      margin-bottom: 2rem;
-    }
-
-    .divider {
-      width: 48px;
-      height: 3px;
-      background: var(--accent);
-      margin-bottom: 2.5rem;
-    }
-
-    /* ABOUT */
-    #about {
-      background: #0d1f3c;
-      border-top: 1px solid rgba(184,151,58,0.15);
-      border-bottom: 1px solid rgba(184,151,58,0.15);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .about-body {
-      font-size: 1.05rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.82);
-    }
-
-    .about-body p + p { margin-top: 1.25rem; }
-
-    .board-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(184,151,58,0.2);
-      padding: 2rem;
-    }
-
-    .board-title {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-    }
-
-    .board-member {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 0.7rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .board-member:last-child { border-bottom: none; }
-
-    .member-name {
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .member-role {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      color: var(--gold);
-      text-transform: uppercase;
-    }
-
-    /* MEMBERSHIP */
-    #membership {
-      background: var(--navy);
-    }
-
-    .membership-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .membership-body {
-      font-size: 1.05rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.82);
-    }
-
-    .membership-body p + p { margin-top: 1.25rem; }
-
-    .req-list {
-      list-style: none;
-      margin-top: 1.5rem;
-    }
-
-    .req-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      padding: 0.6rem 0;
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.75);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .req-list li:last-child { border-bottom: none; }
-
-    .req-list li::before {
-      content: '—';
-      color: var(--gold);
-      font-family: 'DM Mono', monospace;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .apply-box {
-      background: rgba(200,16,46,0.08);
-      border: 1px solid rgba(200,16,46,0.3);
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .apply-box p {
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-
-    .btn {
-      display: inline-block;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 0.8rem 1.8rem;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: var(--white);
-    }
-
-    .btn-primary:hover { background: #a00d25; }
-
-    .btn-outline {
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      background: transparent;
-    }
-
-    .btn-outline:hover { background: rgba(184,151,58,0.1); }
-
-    /* EVENTS */
-    #events {
-      background: #0d1f3c;
-      border-top: 1px solid rgba(184,151,58,0.15);
-      border-bottom: 1px solid rgba(184,151,58,0.15);
-    }
-
-    .events-intro {
-      font-size: 1.05rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.82);
-      max-width: 680px;
-      margin-bottom: 2.5rem;
-    }
-
-    .event-row {
-      display: grid;
-      grid-template-columns: 120px 1fr auto;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 1.25rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      transition: background 0.2s;
-    }
-
-    .event-row:last-child { border-bottom: none; }
-
-    .event-date {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.5rem;
-      letter-spacing: 0.06em;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .event-date span {
-      display: block;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      color: rgba(255,255,255,0.4);
-      text-transform: uppercase;
-      margin-top: 0.2rem;
-    }
-
-    .event-info {}
-
-    .event-title {
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .event-detail {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.45);
-      text-transform: uppercase;
-    }
-
-    .event-action a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: var(--accent);
-      text-decoration: none;
-      border: 1px solid rgba(200,16,46,0.4);
-      padding: 0.4rem 0.9rem;
-      transition: all 0.2s;
-      white-space: nowrap;
-    }
-
-    .event-action a:hover {
-      background: rgba(200,16,46,0.12);
-    }
-
-    .event-action .soon {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.3);
-      text-transform: uppercase;
-    }
-
-    .venue-note {
-      margin-top: 2rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.4);
-      text-transform: uppercase;
-    }
-
-    /* SUPPORT */
-    #support {
-      background: var(--navy);
-    }
-
-    .support-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .support-body {
-      font-size: 1.05rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.82);
-    }
-
-    .support-body p + p { margin-top: 1.25rem; }
-
-    .donate-box {
-      background: rgba(184,151,58,0.06);
-      border: 1px solid rgba(184,151,58,0.25);
-      padding: 2.5rem;
-      text-align: center;
-    }
-
-    .donate-box .donate-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .donate-box h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.6rem;
-      letter-spacing: 0.06em;
-      margin-bottom: 0.75rem;
-    }
-
-    .donate-box p {
-      font-size: 0.9rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .coming-soon-badge {
-      display: inline-block;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid rgba(184,151,58,0.4);
-      padding: 0.5rem 1.2rem;
-    }
-
-    /* CONTACT */
-    #contact {
-      background: #0d1f3c;
-      border-top: 1px solid rgba(184,151,58,0.15);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .contact-info p {
-      font-size: 1.05rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 2rem;
-    }
-
-    .contact-detail {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .contact-detail-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      min-width: 60px;
-    }
-
-    .contact-detail-value {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.8);
-    }
-
-    .contact-detail-value a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-    }
-
-    .contact-detail-value a:hover { color: var(--gold); }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .form-field label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-    }
-
-    .form-field input,
-    .form-field textarea,
-    .form-field select {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: var(--white);
-      padding: 0.7rem 0.9rem;
-      font-family: 'Source Serif 4', serif;
-      font-size: 0.9rem;
-      outline: none;
-      transition: border-color 0.2s;
-      width: 100%;
-    }
-
-    .form-field input:focus,
-    .form-field textarea:focus,
-    .form-field select:focus {
-      border-color: rgba(184,151,58,0.5);
-    }
-
-    .form-field textarea { resize: vertical; min-height: 120px; }
-
-    .form-submit {
-      align-self: flex-start;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #060e1a;
-      border-top: 1px solid rgba(184,151,58,0.15);
-      padding: 2.5rem 2rem;
-      text-align: center;
-    }
-
-    .footer-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .footer-logo { height: 48px; opacity: 0.7; }
-
-    .footer-text {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.3);
-      text-transform: uppercase;
-      text-align: center;
-      line-height: 1.8;
-    }
-
-    .footer-text a {
-      color: rgba(255,255,255,0.4);
-      text-decoration: none;
-    }
-
-    .footer-text a:hover { color: var(--gold); }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .about-grid,
-      .membership-grid,
-      .support-grid,
-      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-
-      .event-row { grid-template-columns: 80px 1fr; }
-      .event-action { grid-column: 2; }
-
-      nav { padding: 0 1.25rem; }
-      .nav-links { gap: 1.25rem; }
-      .nav-links a { font-size: 0.62rem; }
-
-      .form-row { grid-template-columns: 1fr; }
-    }
-
     /* HAMBURGER */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
-      z-index: 200;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--white);
-      transition: all 0.3s;
-    }
-
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+    /* HERO */
+    #home { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding-top: 64px; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(26,58,110,0.55) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 80% 20%, rgba(200,16,46,0.08) 0%, transparent 60%), linear-gradient(175deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%); }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(184,151,58,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(184,151,58,0.05) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 70% 70% at center, black 20%, transparent 80%); }
+    .hero-content { position: relative; text-align: center; max-width: 860px; padding: 2rem; animation: fadeUp 0.9s ease both; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-logo { width: 180px; height: auto; margin: 0 auto 2rem; filter: drop-shadow(0 4px 24px rgba(26,58,110,0.6)); animation: fadeUp 0.9s 0.1s ease both; }
+    .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; animation: fadeUp 0.9s 0.2s ease both; }
+    .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 5.5rem); letter-spacing: 0.06em; line-height: 1.0; color: var(--white); margin-bottom: 1.5rem; animation: fadeUp 0.9s 0.3s ease both; }
+    .hero-title em { font-style: normal; color: var(--gold); }
+    .hero-mission { font-size: 1.15rem; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,0.82); max-width: 680px; margin: 0 auto 2.5rem; animation: fadeUp 0.9s 0.4s ease both; }
+    .hero-cta { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--white); background: var(--accent); padding: 0.85rem 2.2rem; text-decoration: none; transition: background 0.2s, transform 0.2s; animation: fadeUp 0.9s 0.5s ease both; }
+    .hero-cta:hover { background: #a00d25; transform: translateY(-2px); }
+
+    /* SECTIONS */
+    section { padding: 6rem 2rem; }
+    .section-inner { max-width: 960px; margin: 0 auto; }
+    .section-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 4vw, 3.2rem); letter-spacing: 0.05em; color: var(--white); margin-bottom: 2rem; }
+    .divider { width: 48px; height: 3px; background: var(--accent); margin-bottom: 2.5rem; }
+
+    /* ABOUT */
+    #about { background: #0d1f3c; border-top: 1px solid rgba(184,151,58,0.15); border-bottom: 1px solid rgba(184,151,58,0.15); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .about-body { font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.82); }
+    .about-body p + p { margin-top: 1.25rem; }
+    .board-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(184,151,58,0.2); padding: 2rem; }
+    .board-title { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .board-member { display: flex; justify-content: space-between; align-items: baseline; padding: 0.7rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .board-member:last-child { border-bottom: none; }
+    .member-name { font-weight: 600; font-size: 0.95rem; }
+    .member-role { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; color: var(--gold); text-transform: uppercase; }
+
+    /* MEMBERSHIP */
+    #membership { background: var(--navy); }
+    .membership-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: start; }
+    .membership-body { font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.82); }
+    .membership-body p + p { margin-top: 1.25rem; }
+    .req-list { list-style: none; margin-top: 1.5rem; }
+    .req-list li { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.6rem 0; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .req-list li:last-child { border-bottom: none; }
+    .req-list li::before { content: '--'; color: var(--gold); font-family: 'DM Mono', monospace; flex-shrink: 0; margin-top: 1px; }
+    .apply-box { background: rgba(200,16,46,0.08); border: 1px solid rgba(200,16,46,0.3); padding: 2rem; text-align: center; }
+    .apply-box p { font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; line-height: 1.7; }
+    .btn { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.8rem 1.8rem; text-decoration: none; transition: all 0.2s; }
+    .btn-primary { background: var(--accent); color: var(--white); }
+    .btn-primary:hover { background: #a00d25; }
+
+    /* EVENTS */
+    #events { background: #0d1f3c; border-top: 1px solid rgba(184,151,58,0.15); border-bottom: 1px solid rgba(184,151,58,0.15); }
+    .events-intro { font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.82); max-width: 680px; margin-bottom: 2.5rem; }
+    .event-row { display: grid; grid-template-columns: 120px 1fr auto; align-items: center; gap: 1.5rem; padding: 1.25rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .event-row:last-child { border-bottom: none; }
+    .event-date { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.06em; color: var(--gold); line-height: 1; }
+    .event-date span { display: block; font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.16em; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-top: 0.2rem; }
+    .event-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; }
+    .event-detail { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); text-transform: uppercase; }
+    .event-action a { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent); text-decoration: none; border: 1px solid rgba(200,16,46,0.4); padding: 0.4rem 0.9rem; transition: all 0.2s; white-space: nowrap; }
+    .event-action a:hover { background: rgba(200,16,46,0.12); }
+    .event-action .soon { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.3); text-transform: uppercase; }
+    .venue-note { margin-top: 2rem; font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+
+    /* SUPPORT */
+    #support { background: var(--navy); }
+    .support-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: start; }
+    .support-body { font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.82); }
+    .support-body p + p { margin-top: 1.25rem; }
+    .donate-box { background: rgba(184,151,58,0.06); border: 1px solid rgba(184,151,58,0.25); padding: 2.5rem; text-align: center; }
+    .donate-box h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+    .donate-box p { font-size: 0.9rem; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 1.5rem; }
+    .coming-soon-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(184,151,58,0.4); padding: 0.5rem 1.2rem; }
+
+    /* CONTACT */
+    #contact { background: #0d1f3c; border-top: 1px solid rgba(184,151,58,0.15); }
+    .contact-detail { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .contact-detail-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); min-width: 60px; }
+    .contact-detail-value { font-size: 0.95rem; color: rgba(255,255,255,0.8); }
+    .contact-detail-value a { color: rgba(255,255,255,0.8); text-decoration: none; }
+    .contact-detail-value a:hover { color: var(--gold); }
+
+    /* FOOTER */
+    footer { background: #060e1a; border-top: 1px solid rgba(184,151,58,0.15); padding: 2.5rem 2rem; text-align: center; }
+    .footer-inner { max-width: 960px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    .footer-logo { height: 48px; opacity: 0.7; }
+    .footer-text { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; color: rgba(255,255,255,0.3); text-transform: uppercase; text-align: center; line-height: 1.8; }
+    .footer-text a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    .footer-text a:hover { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .about-grid, .membership-grid, .support-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .event-row { grid-template-columns: 80px 1fr; }
+      .event-action { grid-column: 2; }
+      nav { padding: 0 1.25rem; }
+    }
     @media (max-width: 560px) {
       .hamburger { display: flex; }
-
       .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 64px;
-        left: 0; right: 0;
+        display: flex; flex-direction: column;
+        position: fixed; top: 64px; left: 0; right: 0;
         background: rgba(10,22,40,0.98);
-        padding: 1.5rem 2rem 2rem;
-        gap: 0;
+        padding: 1.5rem 2rem 2rem; gap: 0;
         transform: translateY(-110%);
         transition: transform 0.3s ease;
         border-bottom: 1px solid rgba(184,151,58,0.2);
         z-index: 99;
       }
-
       .nav-links.open { transform: translateY(0); }
-
       .nav-links li { border-bottom: 1px solid rgba(255,255,255,0.07); }
-
-      .nav-links a {
-        display: block;
-        padding: 0.9rem 0;
-        font-size: 0.78rem;
-      }
+      .nav-links a { display: block; padding: 0.9rem 0; font-size: 0.78rem; }
     }
   </style>
 </head>
@@ -740,10 +163,7 @@
 <nav>
   <div class="nav-logo">
     <img src="IG_Middle%20Tennessee%20Members%20Alliance.png" alt="InfraGard Middle Tennessee Logo" />
-    <div class="nav-wordmark">
-      InfraGard
-      <span>Middle Tennessee</span>
-    </div>
+    <div class="nav-wordmark">InfraGard<span>Middle Tennessee</span></div>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Toggle menu">
     <span></span><span></span><span></span>
@@ -788,22 +208,10 @@
       <div>
         <div class="board-card">
           <div class="board-title">2026 Board of Directors</div>
-          <div class="board-member">
-            <span class="member-name">Milton Bartley</span>
-            <span class="member-role">President</span>
-          </div>
-          <div class="board-member">
-            <span class="member-name">Jim Desmond</span>
-            <span class="member-role">Vice President</span>
-          </div>
-          <div class="board-member">
-            <span class="member-name">Jennifer Lefevre</span>
-            <span class="member-role">Secretary</span>
-          </div>
-          <div class="board-member">
-            <span class="member-name">Bart Holzer</span>
-            <span class="member-role">Treasurer</span>
-          </div>
+          <div class="board-member"><span class="member-name">Milton Bartley</span><span class="member-role">President</span></div>
+          <div class="board-member"><span class="member-name">Jim Desmond</span><span class="member-role">Vice President</span></div>
+          <div class="board-member"><span class="member-name">Jennifer Lefevre</span><span class="member-role">Secretary</span></div>
+          <div class="board-member"><span class="member-name">Bart Holzer</span><span class="member-role">Treasurer</span></div>
         </div>
       </div>
     </div>
@@ -849,70 +257,41 @@
 
     <div class="event-row">
       <div class="event-date">April 2<span>Thursday</span></div>
-      <div class="event-info">
-        <div class="event-title">FBI Cyber Threat Briefing</div>
-        <div class="event-detail">SSA Brian Stevens &bull; Current global cyber threat landscape</div>
-      </div>
-      <div class="event-action">
-        <a href="https://www.eventbrite.com/e/infragard-middle-tn-april-meeting-fbi-cyber-threat-briefing-tickets-1984714468402?aff=oddtdtcreator" target="_blank" rel="noopener">Register</a>
-      </div>
+      <div class="event-info"><div class="event-title">FBI Cyber Threat Briefing</div><div class="event-detail">SSA Brian Stevens &bull; Current global cyber threat landscape</div></div>
+      <div class="event-action"><a href="https://www.eventbrite.com/e/infragard-middle-tn-april-meeting-fbi-cyber-threat-briefing-tickets-1984714468402?aff=oddtdtcreator" target="_blank" rel="noopener">Register</a></div>
     </div>
-
     <div class="event-row">
       <div class="event-date">May 7<span>Thursday</span></div>
-      <div class="event-info">
-        <div class="event-title">Chapter Meeting</div>
-        <div class="event-detail">Guest speaker TBA &bull; Topic forthcoming</div>
-      </div>
+      <div class="event-info"><div class="event-title">Chapter Meeting</div><div class="event-detail">Guest speaker TBA &bull; Topic forthcoming</div></div>
       <div class="event-action"><span class="soon">Coming Soon</span></div>
     </div>
-
     <div class="event-row">
       <div class="event-date">June 4<span>Thursday</span></div>
-      <div class="event-info">
-        <div class="event-title">Chapter Meeting</div>
-        <div class="event-detail">Guest speaker TBA &bull; Topic forthcoming</div>
-      </div>
+      <div class="event-info"><div class="event-title">Chapter Meeting</div><div class="event-detail">Guest speaker TBA &bull; Topic forthcoming</div></div>
       <div class="event-action"><span class="soon">Coming Soon</span></div>
     </div>
-
     <div class="event-row">
       <div class="event-date">August 6<span>Thursday</span></div>
-      <div class="event-info">
-        <div class="event-title">Chapter Meeting</div>
-        <div class="event-detail">Guest speaker TBA &bull; Topic forthcoming</div>
-      </div>
+      <div class="event-info"><div class="event-title">Chapter Meeting</div><div class="event-detail">Guest speaker TBA &bull; Topic forthcoming</div></div>
       <div class="event-action"><span class="soon">Coming Soon</span></div>
     </div>
-
     <div class="event-row">
       <div class="event-date">September 3<span>Thursday</span></div>
-      <div class="event-info">
-        <div class="event-title">Chapter Meeting</div>
-        <div class="event-detail">Guest speaker TBA &bull; Topic forthcoming</div>
-      </div>
+      <div class="event-info"><div class="event-title">Chapter Meeting</div><div class="event-detail">Guest speaker TBA &bull; Topic forthcoming</div></div>
       <div class="event-action"><span class="soon">Coming Soon</span></div>
     </div>
-
     <div class="event-row">
       <div class="event-date">November 5<span>Thursday</span></div>
-      <div class="event-info">
-        <div class="event-title">Chapter Meeting</div>
-        <div class="event-detail">Guest speaker TBA &bull; Topic forthcoming</div>
-      </div>
+      <div class="event-info"><div class="event-title">Chapter Meeting</div><div class="event-detail">Guest speaker TBA &bull; Topic forthcoming</div></div>
       <div class="event-action"><span class="soon">Coming Soon</span></div>
     </div>
-
     <div class="event-row">
       <div class="event-date">December 17<span>Thursday</span></div>
-      <div class="event-info">
-        <div class="event-title">Holiday Party</div>
-        <div class="event-detail">Annual chapter celebration &bull; Details forthcoming</div>
-      </div>
+      <div class="event-info"><div class="event-title">Holiday Party</div><div class="event-detail">Annual chapter celebration &bull; Details forthcoming</div></div>
       <div class="event-action"><span class="soon">Coming Soon</span></div>
     </div>
 
-    <p class="venue-note">All meetings held at Horn &bull; 1700 Campbell Crossing Dr, Franklin, TN 37067 &bull; 9:30–11:00 AM</p>
+    <p class="venue-note">All meetings held at Horn &bull; 1700 Campbell Crossing Dr, Franklin, TN 37067 &bull; 9:30 to 11:00 AM</p>
   </div>
 </section>
 
@@ -932,7 +311,6 @@
       </div>
       <div>
         <div class="donate-box">
-          <div class="donate-icon">🛡</div>
           <h3>Support Our Work</h3>
           <p>Our online giving portal is being finalized. Check back soon to make a contribution or contact us directly to discuss other ways to support the chapter.</p>
           <span class="coming-soon-badge">Online Giving Coming Soon</span>
@@ -952,7 +330,7 @@
     <p style="font-size:1.05rem; font-weight:300; line-height:1.8; color:rgba(255,255,255,0.75); margin-bottom:2rem;">Questions about membership, events, or partnership opportunities? Reach out and a board member will follow up with you directly.</p>
     <div class="contact-detail">
       <span class="contact-detail-label">Email</span>
-      <span class="contact-detail-value"><a href="/cdn-cgi/l/email-protection#9ff6f1f9f0dff6f1f9edfef8feedfbf2f6fbebf1b1f0edf8"><span class="__cf_email__" data-cfemail="9cf5f2faf3dcf5f2faeefdfbfdeef8f1f5f8e8f2b2f3eefb">[email&#160;protected]</span></a></span>
+      <span class="contact-detail-value"><a href="mailto:info@infragardmidtn.org">info@infragardmidtn.org</a></span>
     </div>
     <div class="contact-detail">
       <span class="contact-detail-label">Web</span>
@@ -971,4 +349,40 @@
     <img class="footer-logo" src="IG_Middle%20Tennessee%20Members%20Alliance.png" alt="InfraGard Middle Tennessee" />
     <div class="footer-text">
       &copy; 2026 InfraGard Middle Tennessee Members Alliance &bull; A Public-Private Partnership with the FBI<br/>
-      <a href="https://www.infragardmidtn.org" target="_blank">infragardmidtn.org</a> &bull; <a href="/cdn-cgi/l/email-protection#6c05020a032c05020a1e0d0b0d1e08010508180242031e0b"><span class="__cf_email__" data-cfemail="335a5d555c735a
+      <a href="https://www.infragardmidtn.org" target="_blank">infragardmidtn.org</a> &bull; <a href="mailto:info@infragardmidtn.org">info@infragardmidtn.org</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Hamburger menu
+  var btn = document.getElementById("hamburger");
+  var menu = document.getElementById("navLinks");
+  btn.onclick = function() {
+    btn.classList.toggle("open");
+    menu.classList.toggle("open");
+  };
+  document.querySelectorAll("#navLinks a").forEach(function(a) {
+    a.onclick = function() {
+      btn.classList.remove("open");
+      menu.classList.remove("open");
+    };
+  });
+
+  // Scroll spy
+  var sections = document.querySelectorAll("section[id]");
+  var links = document.querySelectorAll(".nav-links a");
+  window.addEventListener("scroll", function() {
+    var current = "";
+    sections.forEach(function(s) {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    links.forEach(function(a) {
+      a.style.color = a.getAttribute("href") === "#" + current
+        ? "var(--gold)" : "rgba(255,255,255,0.7)";
+    });
+  });
+</script>
+
+</body>
+</html>
