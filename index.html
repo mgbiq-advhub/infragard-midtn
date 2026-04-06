@@ -97,6 +97,8 @@
     .events-intro { font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.82); max-width: 680px; margin-bottom: 2.5rem; }
     .event-row { display: grid; grid-template-columns: 120px 1fr auto; align-items: center; gap: 1.5rem; padding: 1.25rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
     .event-row:last-child { border-bottom: none; }
+    .event-row.past { opacity: 0.4; }
+    .event-row.past .event-action a { pointer-events: none; border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.3); }
     .event-date { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.06em; color: var(--gold); line-height: 1; }
     .event-date span { display: block; font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.16em; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-top: 0.2rem; }
     .event-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; }
@@ -256,15 +258,15 @@
     <div class="divider"></div>
     <p class="events-intro">The Alliance meets monthly on Thursdays from 9:30 to 11:00 AM. Each session features a guest speaker, member networking, and open discussion. Eventbrite invitations are sent prior to each meeting.</p>
 
-    <div class="event-row">
+    <div class="event-row past">
       <div class="event-date">April 2<span>Thursday</span></div>
       <div class="event-info"><div class="event-title">FBI Cyber Threat Briefing</div><div class="event-detail">SSA Brian Stevens &bull; Current global cyber threat landscape</div></div>
       <div class="event-action"><a href="https://www.eventbrite.com/e/infragard-middle-tn-april-meeting-fbi-cyber-threat-briefing-tickets-1984714468402?aff=oddtdtcreator" target="_blank" rel="noopener">Register</a></div>
     </div>
     <div class="event-row">
       <div class="event-date">May 7<span>Thursday</span></div>
-      <div class="event-info"><div class="event-title">Chapter Meeting</div><div class="event-detail">Guest speaker TBA &bull; Topic forthcoming</div></div>
-      <div class="event-action"><span class="soon">Coming Soon</span></div>
+      <div class="event-info"><div class="event-title">Anatomy of a Breach</div><div class="event-detail">Milton Bartley &amp; Damian King</div></div>
+      <div class="event-action"><a href="https://www.eventbrite.com/e/1986768141995?aff=oddtdtcreator" target="_blank" rel="noopener">Register</a></div>
     </div>
     <div class="event-row">
       <div class="event-date">June 4<span>Thursday</span></div>
