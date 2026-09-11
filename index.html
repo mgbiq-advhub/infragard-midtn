@@ -57,6 +57,10 @@
     .hero-mission { font-size: 1.15rem; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,0.82); max-width: 680px; margin: 0 auto 2.5rem; animation: fadeUp 0.9s 0.4s ease both; }
     .hero-cta { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--white); background: var(--accent); padding: 0.85rem 2.2rem; text-decoration: none; transition: background 0.2s, transform 0.2s; animation: fadeUp 0.9s 0.5s ease both; }
     .hero-cta:hover { background: #a00d25; transform: translateY(-2px); }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .hero-cta-secondary { background: transparent; border: 1px solid rgba(184,151,58,0.6); }
+    .hero-cta-secondary:hover { background: rgba(184,151,58,0.12); }
+    .hero-note { margin-top: 1.25rem; font-family: 'DM Mono', monospace; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); animation: fadeUp 0.9s 0.6s ease both; }
 
     /* SECTIONS */
     section { padding: 6rem 2rem; }
@@ -190,7 +194,15 @@
     <div class="hero-eyebrow">Partnership for Protection &bull; FBI &bull; Middle Tennessee</div>
     <h1 class="hero-title">InfraGard<br/><em>Middle Tennessee</em></h1>
     <p class="hero-mission">To strengthen national security and community resilience by building trusted partnerships between the FBI and critical infrastructure stakeholders in Middle Tennessee.</p>
-    <a href="#membership" class="hero-cta">Apply for Membership</a>
+    <!-- [EDIT:HERO-CTA] -->
+    <div class="hero-actions">
+      <!-- [EDIT:MAILERLITE] Replace this mailto with the MailerLite form link when ready -->
+      <a href="mailto:president@infragardmidtn.org?subject=Add%20me%20to%20the%20InfraGard%20Middle%20Tennessee%20list&amp;body=Please%20add%20me%20to%20the%20chapter%20meeting%20list.%0A%0AName%3A%20%0AOrganization%3A%20%0ARole%3A%20" class="hero-cta">Get on the Chapter List</a>
+      <!-- [/EDIT:MAILERLITE] -->
+      <a href="#events" class="hero-cta hero-cta-secondary">Next Meeting: November 5</a>
+    </div>
+    <p class="hero-note">Members and non-members welcome at chapter meetings. No membership fee.</p>
+    <!-- [/EDIT:HERO-CTA] -->
   </div>
 </section>
 
