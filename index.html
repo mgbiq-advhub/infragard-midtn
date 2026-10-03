@@ -112,8 +112,27 @@
     .event-action .soon { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.3); text-transform: uppercase; }
     .venue-note { margin-top: 2rem; font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.4); text-transform: uppercase; }
 
+    /* SPONSORS */
+    #sponsors { background: var(--navy); }
+    .sponsors-intro { font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.82); max-width: 680px; margin-bottom: 2.5rem; }
+    .sponsor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .sponsor-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(184,151,58,0.2); display: flex; flex-direction: column; }
+    .sponsor-logo { background: #ffffff; height: 130px; display: flex; align-items: center; justify-content: center; padding: 1.25rem 1.5rem; }
+    .sponsor-logo img { max-width: 100%; max-height: 80px; width: auto; height: auto; }
+    .sponsor-logo img.logo-invert { filter: brightness(0); }
+    .sponsor-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+    .sponsor-tag { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    .sponsor-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+    .sponsor-desc { font-size: 0.9rem; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.72); flex: 1; }
+    .sponsor-links { margin-top: 1.25rem; display: flex; gap: 1.25rem; }
+    .sponsor-links a { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; border-bottom: 1px solid rgba(184,151,58,0.4); padding-bottom: 2px; transition: color 0.2s; }
+    .sponsor-links a:hover { color: var(--gold); }
+    .sponsor-cta { margin-top: 2.5rem; font-size: 0.92rem; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.7; }
+    .sponsor-cta a { color: var(--gold); text-decoration: none; }
+    .sponsor-cta a:hover { text-decoration: underline; }
+
     /* SUPPORT */
-    #support { background: var(--navy); }
+    #support { background: #0d1f3c; border-top: 1px solid rgba(184,151,58,0.15); border-bottom: 1px solid rgba(184,151,58,0.15); }
     .support-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: start; }
     .support-body { font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.82); }
     .support-body p + p { margin-top: 1.25rem; }
@@ -123,7 +142,7 @@
     .coming-soon-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(184,151,58,0.4); padding: 0.5rem 1.2rem; }
 
     /* CONTACT */
-    #contact { background: #0d1f3c; border-top: 1px solid rgba(184,151,58,0.15); }
+    #contact { background: var(--navy); }
     .contact-detail { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
     .contact-detail-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); min-width: 60px; }
     .contact-detail-value { font-size: 0.95rem; color: rgba(255,255,255,0.8); }
@@ -141,6 +160,7 @@
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .about-grid, .membership-grid, .support-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .sponsor-grid { grid-template-columns: 1fr; }
       .event-row { grid-template-columns: 80px 1fr; }
       .event-action { grid-column: 2; }
       nav { padding: 0 1.25rem; }
@@ -180,6 +200,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#membership">Membership</a></li>
     <li><a href="#events">Events</a></li>
+    <li><a href="#sponsors">Sponsors</a></li>
     <li><a href="#support">Support</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -212,7 +233,7 @@
         <div class="about-body">
           <p>InfraGard Middle Tennessee Members Alliance is a nonprofit, public-private partnership with the FBI dedicated to the protection of U.S. critical infrastructure.</p>
           <!-- [EDIT:MEMBER-COUNT] -->
-          <p>With more than 350 active members as of 2026, the Alliance connects private sector professionals, academics, and government officials with law enforcement to share actionable intelligence, deliver training on emerging security threats, and strengthen regional resilience across all 16 critical infrastructure sectors.</p>
+          <p>With about 420 active members as of 2026, the Alliance connects private sector professionals, academics, and government officials with law enforcement to share actionable intelligence, deliver training on emerging security threats, and strengthen regional resilience across all 16 critical infrastructure sectors.</p>
           <!-- [/EDIT:MEMBER-COUNT] -->
           <p>Our chapter serves the Middle Tennessee region with a commitment to trust, rigor, and mission-driven collaboration. Meetings are confidential, candid, and designed to deliver real value to members and the communities they protect.</p>
         </div>
@@ -322,7 +343,7 @@
     <!-- [EVENT:NOV5] status:pending -->
     <div class="event-row">
       <div class="event-date">November 5<span>Thursday</span></div>
-      <div class="event-info"><div class="event-title">Chapter Meeting</div><div class="event-detail">Topic and registration will be posted by September 30</div></div>
+      <div class="event-info"><div class="event-title">Meet the SAC: FBI and InfraGard Partnership</div><div class="event-detail">FBI Special Agent in Charge Terrence Reilly &bull; Introduction to the chapter &bull; Why the FBI and InfraGard relationship matters</div></div>
       <div class="event-action"><span class="soon">Coming Soon</span></div>
     </div>
     <!-- [/EVENT:NOV5] -->
@@ -341,6 +362,76 @@
     <p class="venue-note">All meetings held at Horn USA &bull; 1870 General George Patton Dr, Franklin, TN 37067 &bull; 9:30 to 11:00 AM</p>
     <!-- [/EDIT:VENUE] -->
 
+  </div>
+</section>
+
+<!-- SPONSORS -->
+<section id="sponsors">
+  <div class="section-inner">
+    <div class="section-label">Thank You</div>
+    <h2 class="section-title">Founding Sponsors</h2>
+    <div class="divider"></div>
+    <p class="sponsors-intro">Our Founding Sponsors made an early commitment to the chapter and its mission. Their support funds speaker programs, member events, and the work of connecting Middle Tennessee's critical infrastructure community with the FBI.</p>
+
+    <!-- [EDIT:SPONSORS] -->
+    <div class="sponsor-grid">
+
+      <!-- [SPONSOR:SECURIT] -->
+      <div class="sponsor-card">
+        <a class="sponsor-logo" href="https://securitconsulting.com/" target="_blank" rel="noopener">
+          <img src="sponsor-securit.png" alt="SecurIT Consulting" />
+        </a>
+        <div class="sponsor-body">
+          <div class="sponsor-tag">Founding Sponsor</div>
+          <div class="sponsor-name">SecurIT Consulting</div>
+          <p class="sponsor-desc">SecurIT Consulting brings over 20 years of dedicated experience in Managed IT, Cybersecurity, and Technology Consulting. A strategic partner to clients across critical sectors including healthcare, government, technology, finance, manufacturing, and law, SecurIT empowers organizations to operate securely and drive success.</p>
+          <div class="sponsor-links">
+            <a href="https://securitconsulting.com/" target="_blank" rel="noopener">Website</a>
+            <a href="https://www.linkedin.com/company/securitconsulting/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <!-- [/SPONSOR:SECURIT] -->
+
+      <!-- [SPONSOR:SECUREHALO] -->
+      <div class="sponsor-card">
+        <a class="sponsor-logo" href="https://www.securehalo.com" target="_blank" rel="noopener">
+          <img src="sponsor-securehalo.png" alt="Secure Halo, a Mission Critical Partners Company" />
+        </a>
+        <div class="sponsor-body">
+          <div class="sponsor-tag">Founding Sponsor</div>
+          <div class="sponsor-name">Secure Halo</div>
+          <p class="sponsor-desc">Secure Halo helps organizations stay ahead of cyber threats before they become business problems. The firm protects critical data, exposes security gaps, manages risk, and strengthens defenses for industries where downtime, breaches, and weak compliance are not an option.</p>
+          <div class="sponsor-links">
+            <a href="https://www.securehalo.com" target="_blank" rel="noopener">Website</a>
+            <a href="https://www.linkedin.com/company/2254039" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <!-- [/SPONSOR:SECUREHALO] -->
+
+      <!-- [SPONSOR:IMAGEQUEST] -->
+      <div class="sponsor-card">
+        <a class="sponsor-logo" href="https://imagequest.com" target="_blank" rel="noopener">
+          <!-- White logo is rendered dark by .logo-invert. If you upload a full-color logo, remove class="logo-invert". -->
+          <img class="logo-invert" src="sponsor-imagequest.png" alt="ImageQuest" />
+        </a>
+        <div class="sponsor-body">
+          <div class="sponsor-tag">Founding Sponsor</div>
+          <div class="sponsor-name">ImageQuest</div>
+          <p class="sponsor-desc">ImageQuest is a Middle Tennessee managed IT and cybersecurity provider serving regulated organizations, with deep roots in community banking and financial services. For nearly two decades, we have helped leadership teams manage risk, meet examiner expectations, and adopt new technology, including AI, with discipline and confidence.</p>
+          <div class="sponsor-links">
+            <a href="https://imagequest.com" target="_blank" rel="noopener">Website</a>
+            <a href="https://www.linkedin.com/company/imagequest_2" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <!-- [/SPONSOR:IMAGEQUEST] -->
+
+    </div>
+    <!-- [/EDIT:SPONSORS] -->
+
+    <p class="sponsor-cta">A limited number of Founding Sponsor slots remain. Organizations interested in supporting the chapter can contact <a href="mailto:president@infragardmidtn.org">president@infragardmidtn.org</a>.</p>
   </div>
 </section>
 
